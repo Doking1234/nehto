@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="h3 mb-3 font-weight-normal">Inventory</h2>
+    <a href="{% url 'add_item' %}" class="btn btn-primary mb-3">Add Item</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Serial Number</th>
+                <th>User</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.serial_number }}</td>
+                <td>{{ item.user.username }}</td>
+                <td>
+                    <a href="{% url 'item_detail' item.id %}" class="btn btn-info btn-sm">View</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Item Detail{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="h3 mb-3 font-weight-normal">Item Detail</h2>
+    <p><strong>Name:</strong> {{ item.name }}</p>
+    <p><strong>Serial Number:</strong> {{ item.serial_number }}</p>
+    <p><strong>User:</strong> {{ item.user.username }}</p>
+    <form method="post" action="{% url 'delete_item' item.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete Item</button>
+    </form>
+</div>
+{% endblock %}

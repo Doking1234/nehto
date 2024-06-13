@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome Back to Your Inventory Manager</h1>
+    <p class="lead">Manage your inventory effortlessly. Here you can track, organize, and analyze your items all in one place.</p>
+    <hr class="my-4">
+    <p>Continue managing your items and stay on top of your inventory.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'inventory' %}" role="button">Go check your Inventory</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Inventory Image 1">
+            <h2>Track Items</h2>
+            <p>Keep a detailed list of all your items with descriptions, categories, and quantities.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Inventory Image 2">
+            <h2>Manage Inventory</h2>
+            <p>Easily add, edit, or remove items from your inventory. Stay organized and in control.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Inventory Image 3">
+            <h2>Get Insights</h2>
+            <p>Analyze your inventory data to make informed decisions about your items and their usage.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
